@@ -4,10 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sasha | Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    <!-- ===================== NAV ===================== -->
     <nav>
         <div class="nav-container">
             <h2 class="logo">Sasha<span>.</span></h2>
@@ -18,68 +22,170 @@
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <button id="darkModeToggle" aria-label="Toggle Dark Mode">🌙</button>
+            <div class="nav-right">
+                <button id="darkModeToggle" aria-label="Toggle Dark Mode">🌙</button>
+                <button class="burger" id="burger" aria-label="Menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
         </div>
     </nav>
 
+    <!-- Mobile Drawer -->
+    <div class="mobile-drawer" id="mobileDrawer">
+        <ul>
+            <li><a href="#home"   class="drawer-link">Home</a></li>
+            <li><a href="#about"  class="drawer-link">About</a></li>
+            <li><a href="#projects" class="drawer-link">Projects</a></li>
+            <li><a href="#skills" class="drawer-link">Skills</a></li>
+            <li><a href="#contact" class="drawer-link">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- ===================== HERO ===================== -->
     <header id="home" class="hero fade-in">
         <div class="hero-content">
-            <h1>Hola!, It's <span>Sasha</span></h1>
-            <p>Aspiring IT Student & Developer</p>
-            <a href="#projects" class="btn-main">View My Work</a>
+
+            <!-- IMAGE CONTAINER above the name -->
+            <div class="avatar-wrap">
+                <div class="avatar-ring">
+                    <img src="profile.jpg" alt="Sasha profile photo" class="avatar-img" onerror="this.style.display='none';this.parentElement.classList.add('no-img')">
+                    <div class="avatar-fallback"><i class="fa-solid fa-user"></i></div>
+                </div>
+                <!-- Floating status pill -->
+                <div class="status-pill">
+                    <span class="status-dot"></span> Open for opportunities
+                </div>
+            </div>
+
+            <h1>Hola! It's <span>Sasha</span></h1>
+            <p class="hero-sub">Aspiring IT Student &amp; Developer</p>
+            <p class="hero-bio">I love turning complex problems into simple, beautiful, and intuitive digital experiences.</p>
+
+            <div class="hero-actions">
+                <a href="#projects" class="btn-main">View My Work <i class="fa-solid fa-arrow-right"></i></a>
+                <a href="#contact"  class="btn-ghost">Say Hello 👋</a>
+            </div>
+
+            <!-- Social links -->
+            <div class="hero-socials">
+                <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+
         </div>
+
+        <!-- Decorative blobs -->
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
     </header>
 
+    <!-- ===================== ABOUT ===================== -->
     <section id="about" class="fade-in">
         <div class="container">
-            <h2>About Me</h2>
-            <p>I am an IT student passionate about building websites and systems. I love turning complex problems into simple, beautiful, and intuitive designs.</p>
+            <div class="section-label">About Me</div>
+            <h2 class="section-title">A little bit <em>about</em> me</h2>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>Hi! I'm <strong>Sasha</strong> — an IT student who genuinely gets excited over a well-structured layout and a clean line of code. I'm passionate about building websites and systems that not only work, but feel good to use.</p>
+                    <p>I love turning complex problems into simple, beautiful, and intuitive designs. When I'm not coding, I'm probably sketching UI ideas, exploring new tech, or working on something creative with classmates. 🌸</p>
+                </div>
+                <div class="about-cards">
+                    <div class="about-card">
+                        <i class="fa-solid fa-code"></i>
+                        <span>Clean Code</span>
+                    </div>
+                    <div class="about-card">
+                        <i class="fa-solid fa-mobile-screen"></i>
+                        <span>Responsive Design</span>
+                    </div>
+                    <div class="about-card">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        <span>Creative UI</span>
+                    </div>
+                    <div class="about-card">
+                        <i class="fa-solid fa-users"></i>
+                        <span>Team Player</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
+    <!-- ===================== PROJECTS ===================== -->
     <section id="projects" class="fade-in">
         <div class="container">
-            <h2>My Projects</h2>
+            <div class="section-label">Work</div>
+            <h2 class="section-title">My <em>Projects</em></h2>
             <div class="project-grid">
+
                 <div class="project-card">
+                    <div class="project-icon"><i class="fa-solid fa-globe"></i></div>
                     <h3>Website Project</h3>
                     <p>My first responsive website built with clean HTML and CSS.</p>
-                    <a href="#" class="btn-link">View Project</a>
+                    <div class="project-tags">
+                        <span>HTML</span><span>CSS</span>
+                    </div>
+                    <a href="#" class="btn-link">View Project <i class="fa-solid fa-arrow-up-right"></i></a>
                 </div>
 
                 <div class="project-card">
+                    <div class="project-icon"><i class="fa-solid fa-car"></i></div>
                     <h3>API Project</h3>
                     <p>Car brand API system for managing vehicle data efficiently.</p>
-                    <a href="#" class="btn-link">View Project</a>
+                    <div class="project-tags">
+                        <span>API</span><span>JavaScript</span>
+                    </div>
+                    <a href="#" class="btn-link">View Project <i class="fa-solid fa-arrow-up-right"></i></a>
                 </div>
 
-                <div class="project-card">
+                <div class="project-card featured">
+                    <div class="project-icon"><i class="fa-solid fa-user-astronaut"></i></div>
                     <h3>Portfolio Website</h3>
-                    <p>The modern portfolio you are currently looking at.</p>
-                    <a href="#" class="btn-link">View Project</a>
+                    <p>The modern portfolio you are currently looking at. ✨</p>
+                    <div class="project-tags">
+                        <span>HTML</span><span>CSS</span><span>JS</span>
+                    </div>
+                    <a href="#" class="btn-link">View Project <i class="fa-solid fa-arrow-up-right"></i></a>
                 </div>
+
             </div>
         </div>
     </section>
 
+    <!-- ===================== SKILLS ===================== -->
     <section id="skills" class="fade-in">
         <div class="container">
-            <h2>Skills</h2>
+            <div class="section-label">Skills</div>
+            <h2 class="section-title">What I <em>work with</em></h2>
             <div class="skills-container">
-                <span class="skill-badge">HTML</span>
-                <span class="skill-badge">CSS</span>
-                <span class="skill-badge">JavaScript</span>
-                <span class="skill-badge">Python</span>
-                <span class="skill-badge">C++</span>
+                <span class="skill-badge"><i class="fa-brands fa-html5"></i> HTML</span>
+                <span class="skill-badge"><i class="fa-brands fa-css3-alt"></i> CSS</span>
+                <span class="skill-badge"><i class="fa-brands fa-js"></i> JavaScript</span>
+                <span class="skill-badge"><i class="fa-brands fa-python"></i> Python</span>
+                <span class="skill-badge"><i class="fa-solid fa-c"></i> C++</span>
             </div>
         </div>
     </section>
 
+    <!-- ===================== CONTACT / FOOTER ===================== -->
     <footer id="contact" class="fade-in">
         <div class="container">
-            <h2>Contact</h2>
-            <p>Interested in working together? Drop me an email!</p>
-            <a href="mailto:vicenteshafika2@email.com" class="email-text">vicenteshafika2@email.com</a>
+            <div class="section-label">Contact</div>
+            <h2 class="section-title">Let's <em>work together</em></h2>
+            <p class="contact-sub">Interested in working together? Have a project idea? Drop me an email — I'd love to hear from you! 💌</p>
+            <a href="mailto:vicenteshafika2@email.com" class="email-text">
+                <i class="fa-solid fa-envelope"></i> vicenteshafika2@email.com
+            </a>
+            <div class="footer-socials">
+                <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+            <p class="footer-copy">© 2026 Sasha · Built with 💜 and clean code</p>
         </div>
     </footer>
 
